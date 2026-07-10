@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/privacy-center", "destination": "/redirect.html" },
+    { "source": "/",         "destination": "/index.html"    },
+    { "source": "/:path((?!.*\\.).*)",         "destination": "/index.html"    }
+  ]
+}

